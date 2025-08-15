@@ -7,7 +7,7 @@ import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carouse
 import { Container } from "@/components/ui/container";
 
 export default function Hero() {
-  const images = ["/hero.jpg"];
+  const images = ["/hero.jpg", "/hero-2.jpg"];
 
   return (
     <section className="relative min-h-screen w-full overflow-hidden">
