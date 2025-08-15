@@ -14,7 +14,7 @@ const items = ["About us", "Services", "Testimonials", "Contact"];
 
 export default function Nav() {
   return (
-    <nav className="flex items-center justify-between p-6">
+    <nav className="flex items-center justify-between p-6 bg-transparent">
       <Link href="/" className="flex items-center gap-3">
         <Image src="/logo-mark.svg" alt="IntoHive logo" width={200} height={100} />
       </Link>
