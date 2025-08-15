@@ -1,20 +1,35 @@
 "use client";
 
+import Autoplay from "embla-carousel-autoplay";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 
 export default function Hero() {
+  const images = ["/hero.jpg"];
+
   return (
     <section className="relative min-h-screen w-full overflow-hidden">
-      {/* Background: Figma hero render */}
-      <Image
-        src="/hero.jpg"
-        alt="Modern house"
-        fill
-        priority
-        className="object-cover"
-        sizes="100vw"
-      />
+      <Carousel
+        className="absolute inset-0"
+        opts={{ loop: true }}
+        plugins={[Autoplay({ delay: 5000 })]}
+      >
+        <CarouselContent className="h-full">
+          {images.map((src) => (
+            <CarouselItem key={src} className="relative h-full">
+              <Image
+                src={src}
+                alt="Modern house"
+                fill
+                priority={src === images[0]}
+                className="object-cover"
+                sizes="100vw"
+              />
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+      </Carousel>
 
       {/* Subtle left-to-right veil for text contrast */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/25 to-transparent" />
