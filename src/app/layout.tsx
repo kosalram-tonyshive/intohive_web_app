@@ -26,10 +26,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <div className="container mx-auto">
-          <Nav />
-          {children}
-        </div>
+        <Nav />
+        {children}
       </body>
     </html>
   );
