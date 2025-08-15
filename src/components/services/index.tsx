@@ -51,18 +51,20 @@ export default function Services() {
             transition={{ duration: 0.6 }}
           >
             <Image
-              src="https://images.unsplash.com/photo-1507086182420-83d4af51e6f8?auto=format&fit=crop&w=600&q=80"
+              src="/service-1.jpg"
               alt="Interior design"
               width={600}
               height={400}
-              className="rounded-md object-cover"
+              sizes="(max-width: 768px) 100vw, 600px"
+              className="w-full h-auto rounded-md object-cover"
             />
             <Image
-              src="https://images.unsplash.com/photo-1507084830850-5367e9d0b640?auto=format&fit=crop&w=600&q=80"
+              src="/service-2.jpg"
               alt="Modern architecture"
               width={600}
               height={400}
-              className="rounded-md object-cover"
+              sizes="(max-width: 768px) 100vw, 600px"
+              className="w-full h-auto rounded-md object-cover"
             />
           </motion.div>
         </div>
