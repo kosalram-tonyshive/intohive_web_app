@@ -1,10 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import dynamic from "next/dynamic";
 import Image from "next/image";
-
-const ThreeLogo = dynamic(() => import("../threelogo"), { ssr: false });
 
 export default function Hero() {
   return (
@@ -21,28 +18,6 @@ export default function Hero() {
 
       {/* Subtle left-to-right veil for text contrast */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/25 to-transparent" />
-
-      {/* Top nav */}
-      <nav className="absolute top-6 left-6 right-6 z-20 flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <div aria-hidden className="h-10 w-10">
-            <ThreeLogo />
-          </div>
-          <span className="text-2xl font-semibold tracking-wide">IntoHive</span>
-        </div>
-        <ul className="hidden md:flex gap-10 text-white/90">
-          {["About us", "Services", "Testimonials", "Contact"].map((item) => (
-            <li key={item}>
-              <a
-                href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}
-                className="hover:text-white transition-colors"
-              >
-                {item}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </nav>
 
       {/* Promo card (matches your layout: title -> gold band -> subtext -> phone) */}
       <div className="absolute left-6 md:left-16 bottom-16 z-20 max-w-xl">
