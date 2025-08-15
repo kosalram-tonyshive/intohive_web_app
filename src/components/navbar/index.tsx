@@ -20,6 +20,9 @@ export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState<string | null>(null);
+  const [indicatorStyle, setIndicatorStyle] = useState<{ left: number; width: number } | null>(
+    null,
+  );
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 0);
@@ -31,7 +34,9 @@ export default function Nav() {
     <nav
       className={cn(
         "fixed top-0 z-50 w-full transition-colors",
-        scrolled ? "bg-black text-white" : "bg-transparent text-white",
+        scrolled
+          ? "bg-[var(--header-footer-bg)] text-[var(--header-footer-text)]"
+          : "bg-transparent text-[var(--header-footer-text)]",
       )}
     >
       <Container className="flex items-center justify-between p-6">
@@ -39,23 +44,31 @@ export default function Nav() {
           <Image src="/logo-mark.svg" alt="IntoHive logo" width={200} height={100} />
         </Link>
         <NavigationMenu className="hidden md:block">
-          <NavigationMenuList>
+          <NavigationMenuList className="relative">
             {items.map((item) => (
               <NavigationMenuItem key={item}>
                 <NavigationMenuLink
                   href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}
-                  onClick={() => setActive(item)}
+                  onClick={(e) => {
+                    setActive(item);
+                    const target = e.currentTarget as HTMLAnchorElement;
+                    setIndicatorStyle({ left: target.offsetLeft, width: target.offsetWidth });
+                  }}
                   className={cn(
                     navigationMenuTriggerStyle(),
-                    "text-white hover:text-white focus:text-white font-bold text-lg px-8 relative",
-                    active === item &&
-                      "after:absolute after:left-1/2 after:-bottom-1 after:h-0.5 after:w-8 after:-translate-x-1/2 after:bg-white",
+                    "text-[var(--header-footer-text)] hover:text-[var(--header-footer-text)] focus:text-[var(--header-footer-text)] font-bold text-lg px-8",
                   )}
                 >
                   {item}
                 </NavigationMenuLink>
               </NavigationMenuItem>
             ))}
+            {indicatorStyle && (
+              <span
+                className="absolute -bottom-1 h-0.5 bg-[var(--header-footer-text)] transition-all duration-300"
+                style={{ left: indicatorStyle.left, width: indicatorStyle.width }}
+              />
+            )}
           </NavigationMenuList>
         </NavigationMenu>
         <button
@@ -68,7 +81,7 @@ export default function Nav() {
         </button>
       </Container>
       {open && (
-        <div className="md:hidden bg-black text-white">
+        <div className="md:hidden bg-[var(--header-footer-bg)] text-[var(--header-footer-text)]">
           <ul className="flex flex-col p-4 space-y-2">
             {items.map((item) => (
               <li key={item}>
@@ -81,7 +94,7 @@ export default function Nav() {
                   className={cn(
                     "block w-full py-2 relative",
                     active === item &&
-                      "after:absolute after:left-1/2 after:-bottom-1 after:h-0.5 after:w-8 after:-translate-x-1/2 after:bg-white",
+                      "after:absolute after:left-1/2 after:-bottom-1 after:h-0.5 after:w-8 after:-translate-x-1/2 after:bg-[var(--header-footer-text)]",
                   )}
                 >
                   {item}

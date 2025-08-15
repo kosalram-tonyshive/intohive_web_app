@@ -5,8 +5,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
+  const year = new Date().getFullYear();
   return (
-    <footer className="bg-neutral-900 text-white">
+    <footer className="bg-[var(--header-footer-bg)] text-[var(--header-footer-text)]">
       <div className="mx-auto max-w-7xl px-6 py-12">
         <div className="grid gap-10 md:grid-cols-12">
           {/* Logo and contact */}
@@ -62,7 +63,7 @@ export default function Footer() {
           <div className="flex flex-col gap-6 md:col-span-3">
             <Link
               href="#"
-              className="rounded-md bg-white px-4 py-2 text-center text-sm font-medium text-black transition-colors hover:bg-neutral-200"
+              className="rounded-md border border-[var(--header-footer-text)] px-4 py-2 text-center text-sm font-medium text-[var(--header-footer-text)] transition-colors hover:bg-[var(--header-footer-text)] hover:text-[var(--header-footer-bg)]"
             >
               Book a Consultation
             </Link>
@@ -102,7 +103,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-10 border-t border-white/10 pt-4 text-center text-xs text-white/60">
-          ©2024 IntoHive. All rights reserved.
+          ©{year} IntoHive. All rights reserved.
         </div>
       </div>
     </footer>
