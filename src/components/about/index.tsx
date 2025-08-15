@@ -7,7 +7,7 @@ export default function About() {
       <Container>
         <div className="grid gap-12 md:grid-cols-2 md:items-start">
           <div>
-            <h2 className="text-4xl font-bold mb-6">About us</h2>
+            <h2 className="text-4xl font-extralight mb-6 text-primary">About us</h2>
             <p className="mb-4 text-gray-700">
               At Into Hive, we believe that every space has the potential to inspire. As a
               full-service interior design firm, we are dedicated to transforming homes and

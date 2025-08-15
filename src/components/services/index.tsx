@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Services() {
   return (
-    <section className="py-16 text-white bg-[var(--service-section-bg)]">
+    <section className="py-16 text-white bg-[var(--primary)]">
       <div className="mx-auto max-w-7xl px-6 md:px-8">
         <div className="grid gap-12 md:grid-cols-2 md:items-center">
           <motion.div
@@ -56,7 +56,7 @@ export default function Services() {
               width={400}
               height={500}
               sizes="(max-width: 768px) 100vw, 400px"
-              className="w-full h-auto rounded-md object-cover md:absolute md:bottom-0 md:left-0 md:w-72 md:z-10 lg:w-80"
+              className="w-full h-auto rounded-md object-cover md:absolute md:bottom-0 md:left-0 md:w-52 md:z-10 lg:w-64"
             />
             <Image
               src="/service-2.jpg"
@@ -64,7 +64,7 @@ export default function Services() {
               width={600}
               height={400}
               sizes="(max-width: 768px) 100vw, 600px"
-              className="w-full h-auto rounded-md object-cover md:absolute md:top-0 md:right-0 md:w-80 md:-translate-x-4 md:translate-y-4 lg:w-96"
+              className="w-full h-auto rounded-md object-cover md:absolute md:top-0 md:right-0 md:w-52 md:-translate-x-4 md:translate-y-4 lg:w-64"
             />
           </motion.div>
         </div>

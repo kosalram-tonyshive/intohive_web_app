@@ -50,7 +50,7 @@ export default function Testimonials() {
   return (
     <section className="py-16">
       <div className="mx-auto max-w-7xl px-6 md:px-8">
-        <h2 className="mb-8 text-4xl font-bold">Testimonials</h2>
+        <h2 className="mb-8 text-4xl font-extralight text-primary">Testimonials</h2>
         <Carousel
           opts={{ align: "start", loop: true }}
           plugins={[Autoplay({ delay: 5000 })]}

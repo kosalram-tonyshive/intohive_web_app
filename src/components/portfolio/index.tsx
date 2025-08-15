@@ -29,7 +29,7 @@ export default function Portfolio() {
   return (
     <section className="py-16">
       <div className="mx-auto max-w-7xl px-6 md:px-8">
-        <h2 className="mb-6 text-4xl font-bold">Portfolio</h2>
+        <h2 className="mb-6 text-4xl text-primary font-extralight">Portfolio</h2>
         <div className="flex gap-6 overflow-x-auto pb-4">
           {projects.map((project) => (
             <Card key={project.title} className="relative h-96 min-w-[280px] overflow-hidden">
