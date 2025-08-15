@@ -57,6 +57,7 @@ export default function Services() {
               height={500}
               sizes="(max-width: 768px) 100vw, 400px"
               className="w-full h-auto rounded-md object-cover md:absolute md:top-0 md:left-0 md:w-64 md:z-10 lg:w-72"
+
             />
             <Image
               src="/service-2.jpg"
