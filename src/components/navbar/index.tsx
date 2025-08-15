@@ -45,7 +45,7 @@ export default function Nav() {
                   href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}
                   className={cn(
                     navigationMenuTriggerStyle(),
-                    "text-white hover:text-white focus:text-white",
+                    "text-white hover:text-white focus:text-white font-bold text-lg px-8",
                   )}
                 >
                   {item}

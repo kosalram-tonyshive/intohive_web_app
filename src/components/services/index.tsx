@@ -14,7 +14,7 @@ export default function Services() {
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="mb-8 text-4xl font-bold">Services</h2>
+            <h2 className="mb-8 text-4xl font-extralight">Services</h2>
 
             <div className="mb-10">
               <h3 className="mb-4 flex items-center text-2xl font-semibold">
