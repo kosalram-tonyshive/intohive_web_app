@@ -20,9 +20,9 @@ export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState<string | null>(null);
-  const [indicatorStyle, setIndicatorStyle] = useState<{ left: number; width: number } | null>(
-    null,
-  );
+  const INDICATOR_WIDTH = 24;
+  const [indicatorLeft, setIndicatorLeft] = useState<number | null>(null);
+
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 0);
@@ -52,7 +52,9 @@ export default function Nav() {
                   onClick={(e) => {
                     setActive(item);
                     const target = e.currentTarget as HTMLAnchorElement;
-                    setIndicatorStyle({ left: target.offsetLeft, width: target.offsetWidth });
+                    setIndicatorLeft(
+                      target.offsetLeft + target.offsetWidth / 2 - INDICATOR_WIDTH / 2,
+                    );
                   }}
                   className={cn(
                     navigationMenuTriggerStyle(),
@@ -63,10 +65,10 @@ export default function Nav() {
                 </NavigationMenuLink>
               </NavigationMenuItem>
             ))}
-            {indicatorStyle && (
+            {indicatorLeft !== null && (
               <span
-                className="absolute -bottom-1 h-0.5 bg-[var(--header-footer-text)] transition-all duration-300"
-                style={{ left: indicatorStyle.left, width: indicatorStyle.width }}
+                className="absolute -bottom-1 h-0.5 w-6 bg-[var(--header-footer-text)] transition-all duration-300"
+                style={{ left: indicatorLeft }}
               />
             )}
           </NavigationMenuList>
@@ -94,7 +96,7 @@ export default function Nav() {
                   className={cn(
                     "block w-full py-2 relative",
                     active === item &&
-                      "after:absolute after:left-1/2 after:-bottom-1 after:h-0.5 after:w-8 after:-translate-x-1/2 after:bg-[var(--header-footer-text)]",
+                      "after:absolute after:left-1/2 after:-bottom-1 after:h-0.5 after:w-6 after:-translate-x-1/2 after:bg-[var(--header-footer-text)]",
                   )}
                 >
                   {item}
