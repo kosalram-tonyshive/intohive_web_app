@@ -44,7 +44,7 @@ export default function Services() {
           </motion.div>
 
           <motion.div
-            className="grid gap-6"
+            className="relative grid gap-6 md:h-[500px]"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.5 }}
@@ -53,10 +53,11 @@ export default function Services() {
             <Image
               src="/service-1.jpg"
               alt="Interior design"
-              width={600}
-              height={400}
-              sizes="(max-width: 768px) 100vw, 600px"
-              className="w-full h-auto rounded-md object-cover"
+              width={400}
+              height={500}
+              sizes="(max-width: 768px) 100vw, 400px"
+              className="w-full h-auto rounded-md object-cover md:absolute md:top-0 md:left-0 md:w-64 md:z-10 lg:w-72"
+
             />
             <Image
               src="/service-2.jpg"
@@ -64,7 +65,7 @@ export default function Services() {
               width={600}
               height={400}
               sizes="(max-width: 768px) 100vw, 600px"
-              className="w-full h-auto rounded-md object-cover"
+              className="w-full h-auto rounded-md object-cover md:absolute md:bottom-0 md:right-0 md:w-80 md:translate-x-4 md:translate-y-4 lg:w-96"
             />
           </motion.div>
         </div>
