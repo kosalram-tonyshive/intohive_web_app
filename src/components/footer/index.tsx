@@ -3,11 +3,12 @@
 import { Facebook, Instagram, Linkedin, Mail, Phone, Twitter } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { Container } from "@/components/ui/container";
 
 export default function Footer() {
   return (
     <footer className="bg-neutral-900 text-white">
-      <div className="mx-auto max-w-7xl px-6 py-10">
+      <Container className="py-10">
         <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
           {/* Logo and contact */}
           <div className="flex flex-col gap-6 md:w-1/3">
@@ -84,7 +85,7 @@ export default function Footer() {
         <div className="mt-10 border-t border-white/10 pt-4 text-xs text-white/60">
           ©2024 IntoHive. All rights reserved.
         </div>
-      </div>
+      </Container>
     </footer>
   );
 }

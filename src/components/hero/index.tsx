@@ -4,6 +4,7 @@ import Autoplay from "embla-carousel-autoplay";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import { Container } from "@/components/ui/container";
 
 export default function Hero() {
   const images = ["/hero.jpg"];
@@ -35,7 +36,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/25 to-transparent" />
 
       {/* Promo card (matches your layout: title -> gold band -> subtext -> phone) */}
-      <div className="container mx-auto relative z-20 h-full">
+      <Container className="relative z-20 h-full">
         <div className="absolute left-6 md:left-16 bottom-16 max-w-xl">
           <motion.div
             initial={{ y: 18, opacity: 0 }}
@@ -63,7 +64,7 @@ export default function Hero() {
             </div>
           </motion.div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }
