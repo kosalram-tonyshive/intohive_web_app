@@ -1,5 +1,6 @@
 "use client";
 
+import { Menu } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -17,6 +18,7 @@ const items = ["About us", "Services", "Testimonials", "Contact"];
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 0);
@@ -35,7 +37,7 @@ export default function Nav() {
         <Link href="/" className="flex items-center gap-3">
           <Image src="/logo-mark.svg" alt="IntoHive logo" width={200} height={100} />
         </Link>
-        <NavigationMenu>
+        <NavigationMenu className="hidden md:block">
           <NavigationMenuList>
             {items.map((item) => (
               <NavigationMenuItem key={item}>
@@ -52,7 +54,32 @@ export default function Nav() {
             ))}
           </NavigationMenuList>
         </NavigationMenu>
+        <button
+          type="button"
+          className="md:hidden"
+          onClick={() => setOpen((prev) => !prev)}
+          aria-label="Toggle Menu"
+        >
+          <Menu />
+        </button>
       </Container>
+      {open && (
+        <div className="md:hidden bg-black text-white">
+          <ul className="flex flex-col p-4 space-y-2">
+            {items.map((item) => (
+              <li key={item}>
+                <Link
+                  href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}
+                  onClick={() => setOpen(false)}
+                  className="block w-full py-2"
+                >
+                  {item}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </nav>
   );
 }
