@@ -8,6 +8,9 @@
   --primary: #b27429;
   --primary-foreground: #ffffff;
 
+  --header-footer-bg: #333333;
+  --header-footer-text: #ffffff;
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
