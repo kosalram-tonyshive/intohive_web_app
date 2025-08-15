@@ -27,8 +27,8 @@ export default function Nav() {
   return (
     <nav
       className={cn(
-        "top-0 z-50 w-full transition-colors",
-        scrolled ? "bg-black text-white sticky" : "bg-transparent text-black absolute",
+        "fixed top-0 z-50 w-full transition-colors",
+        scrolled ? "bg-black text-white" : "bg-transparent text-white",
       )}
     >
       <Container className="flex items-center justify-between p-6">
@@ -41,7 +41,10 @@ export default function Nav() {
               <NavigationMenuItem key={item}>
                 <NavigationMenuLink
                   href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}
-                  className={navigationMenuTriggerStyle()}
+                  className={cn(
+                    navigationMenuTriggerStyle(),
+                    "text-white hover:text-white focus:text-white",
+                  )}
                 >
                   {item}
                 </NavigationMenuLink>
