@@ -19,6 +19,7 @@ const items = ["About us", "Services", "Testimonials", "Contact"];
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [active, setActive] = useState<string | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 0);
@@ -43,9 +44,12 @@ export default function Nav() {
               <NavigationMenuItem key={item}>
                 <NavigationMenuLink
                   href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}
+                  onClick={() => setActive(item)}
                   className={cn(
                     navigationMenuTriggerStyle(),
-                    "text-white hover:text-white focus:text-white font-bold text-lg px-8",
+                    "text-white hover:text-white focus:text-white font-bold text-lg px-8 relative",
+                    active === item &&
+                      "after:absolute after:left-1/2 after:-bottom-1 after:h-0.5 after:w-8 after:-translate-x-1/2 after:bg-white",
                   )}
                 >
                   {item}
@@ -70,8 +74,15 @@ export default function Nav() {
               <li key={item}>
                 <Link
                   href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}
-                  onClick={() => setOpen(false)}
-                  className="block w-full py-2"
+                  onClick={() => {
+                    setOpen(false);
+                    setActive(item);
+                  }}
+                  className={cn(
+                    "block w-full py-2 relative",
+                    active === item &&
+                      "after:absolute after:left-1/2 after:-bottom-1 after:h-0.5 after:w-8 after:-translate-x-1/2 after:bg-white",
+                  )}
                 >
                   {item}
                 </Link>
