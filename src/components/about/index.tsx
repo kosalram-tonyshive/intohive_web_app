@@ -1,9 +1,10 @@
 import Image from "next/image";
+import { Container } from "@/components/ui/container";
 
 export default function About() {
   return (
     <section className="py-16">
-      <div className="mx-auto max-w-7xl px-6 md:px-8">
+      <Container>
         <div className="grid gap-12 md:grid-cols-2 md:items-start">
           <div>
             <h2 className="text-4xl font-bold mb-6">About us</h2>
@@ -47,7 +48,7 @@ export default function About() {
             </div>
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }
