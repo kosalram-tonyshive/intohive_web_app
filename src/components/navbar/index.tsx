@@ -28,7 +28,7 @@ export default function Nav() {
     <nav
       className={cn(
         "sticky top-0 z-50 w-full transition-colors",
-        scrolled ? "bg-black" : "bg-transparent",
+        scrolled ? "bg-black text-white" : "bg-transparent text-black",
       )}
     >
       <Container className="flex items-center justify-between p-6">
