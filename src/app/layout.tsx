@@ -24,8 +24,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${nunitoSans.variable} antialiased`}>
+    <html lang="en" className={nunitoSans.variable}>
+      <body className="antialiased">
         <Nav />
         {children}
       </body>
