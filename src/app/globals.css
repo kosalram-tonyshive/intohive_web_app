@@ -5,6 +5,7 @@
   color-scheme: light;
   --background: #ffffff;
   --foreground: #171717;
+  --service-section-bg: hsla(33, 77%, 70%, 1);
 }
 
 @theme inline {

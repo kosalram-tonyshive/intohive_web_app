@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Services() {
   return (
-    <section className="bg-hive-600 py-16 text-white">
+    <section className="py-16 text-white bg-[var(--service-section-bg)]">
       <div className="mx-auto max-w-7xl px-6 md:px-8">
         <div className="grid gap-12 md:grid-cols-2 md:items-center">
           <motion.div
