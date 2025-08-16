@@ -100,7 +100,6 @@ export default function Footer() {
             </div>
           </div>
         </div>
-
         <div className="mt-10 border-t border-white/10 pt-4 text-center text-xs text-white/60">
           ©{year} IntoHive. All rights reserved.
         </div>
