@@ -1,6 +1,7 @@
 import { Plus } from "lucide-react";
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
+import { Container } from "../ui/container";
 
 export default function Portfolio() {
   const projects = [
@@ -28,7 +29,7 @@ export default function Portfolio() {
 
   return (
     <section className="py-16">
-      <div className="mx-auto max-w-7xl px-6 md:px-8">
+      <Container>
         <h2 className="mb-6 text-4xl text-primary font-extralight">Portfolio</h2>
         <div className="flex gap-6 overflow-x-auto pb-4">
           {projects.map((project) => (
@@ -59,7 +60,7 @@ export default function Portfolio() {
             </Card>
           ))}
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

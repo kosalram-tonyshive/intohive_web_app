@@ -3,12 +3,13 @@
 import { Facebook, Instagram, Linkedin, Mail, Phone, Twitter } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { Container } from "../ui/container";
 
 export default function Footer() {
   const year = new Date().getFullYear();
   return (
     <footer className="bg-[var(--header-footer-bg)] text-[var(--header-footer-text)]">
-      <div className="mx-auto max-w-7xl px-6 py-12">
+      <Container className="px-6 py-12">
         <div className="grid grid-cols-12 gap-12">
           {/* Row 1: logo and contact */}
           <div className="col-span-8">
@@ -123,7 +124,7 @@ export default function Footer() {
         <div className="mt-10 border-t border-white/10 pt-4 text-center text-xs text-white/60">
           ©{year} IntoHive. All rights reserved.
         </div>
-      </div>
+      </Container>
     </footer>
   );
 }

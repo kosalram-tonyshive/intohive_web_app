@@ -3,6 +3,7 @@
 import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import { Container } from "../ui/container";
 
 interface Testimonial {
   name: string;
@@ -49,7 +50,7 @@ const testimonials: Testimonial[] = [
 export default function Testimonials() {
   return (
     <section className="py-16">
-      <div className="mx-auto max-w-7xl px-6 md:px-8">
+      <Container>
         <h2 className="mb-8 text-4xl font-extralight text-primary">Testimonials</h2>
         <Carousel
           opts={{ align: "start", loop: true }}
@@ -88,7 +89,7 @@ export default function Testimonials() {
             ))}
           </CarouselContent>
         </Carousel>
-      </div>
+      </Container>
     </section>
   );
 }
