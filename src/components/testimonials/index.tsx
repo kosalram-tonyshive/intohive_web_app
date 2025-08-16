@@ -56,13 +56,13 @@ export default function Testimonials() {
           plugins={[Autoplay({ delay: 5000 })]}
           className="w-full"
         >
-          <CarouselContent className="-ml-4 md:-ml-6">
+          <CarouselContent className="-ml-4 md:-ml-6 overflow-x-auto">
             {testimonials.map((t) => (
               <CarouselItem
                 key={t.name}
-                className="pl-4 md:pl-6 basis-full md:basis-1/2 lg:basis-1/3"
+                className="pl-4 md:pl-6 min-w-full sm:!min-w-[515px] sm:max-w-[515px] sm:h-[551px]"
               >
-                <div className="flex h-full flex-col rounded-md border bg-white p-6 shadow-sm">
+                <div className="flex h-full flex-col rounded-md border bg-[#f4f3f2] p-6 shadow-sm w-full">
                   <div className="mb-4 flex items-center">
                     <Image
                       src={t.image}
@@ -79,7 +79,7 @@ export default function Testimonials() {
                   <p className="flex-1 text-gray-700">{t.content}</p>
                   <button
                     type="button"
-                    className="mt-6 inline-block rounded-md bg-hive-600 px-4 py-2 text-sm font-medium text-white"
+                    className="mt-6 inline-block rounded-md bg-[var(--primary)] px-4 py-2 text-sm font-medium text-white"
                   >
                     Read More
                   </button>
