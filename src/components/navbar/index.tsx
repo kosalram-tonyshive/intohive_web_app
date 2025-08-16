@@ -23,7 +23,6 @@ export default function Nav() {
   const INDICATOR_WIDTH = 24;
   const [indicatorLeft, setIndicatorLeft] = useState<number | null>(null);
 
-
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 0);
     window.addEventListener("scroll", onScroll);
